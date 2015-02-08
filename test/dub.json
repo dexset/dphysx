@@ -1,0 +1,22 @@
+{
+    "name": "test",
+    "targetPath": "bin",
+    "targetType": "executable",
+
+    "importPaths": [ "../import" ],
+    "sourcePaths": [ "src" ],
+
+    "lflags": [ "-L../lib", "-L/home/akzwar/lib64" ],
+
+    "libs":
+    [
+        "dphysx",
+        "stdc++",
+        "PhysX3_x64",
+        "PhysX3Common_x64",
+        "PhysX3Cooking_x64",
+        "PhysX3Extensions",
+        "PhysXProfileSDK",
+        "PhysX3Extensions"
+    ]
+}
