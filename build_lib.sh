@@ -5,6 +5,17 @@ cd $DIR
 if [ ! -d lib ]; then
     mkdir lib
 fi
-g++ -w -D_DEBUG -c ./src/base.cpp -o ./lib/base.o &&
-ar rcs ./lib/libdphysx.a ./lib/base.o
-rm ./lib/base.o
+NAMES=$(find -wholename "./src/*.cpp" | sed 's/\.\/src\///g' | sed 's/\.cpp//g')
+for NAME in $NAMES ; do
+    echo Building $NAME.cpp
+    if !( g++ -w -D_DEBUG -c ./src/$NAME.cpp -o ./lib/$NAME.o ); then
+        echo Compilation error...
+        exit 0;
+    fi
+done
+NAMES=$(find -wholename "./src/*.cpp" | sed "s/\.\/src\//\.\/lib\//g" | sed 's/\.cpp/\.o/g')
+echo Building lib
+ar rcs ./lib/libdphysx.a $NAMES
+echo Done
+rm $NAMES
+

@@ -2,7 +2,6 @@
 #define __DPHYSX_BASE__
 
 #include <stdio.h>
-#include <exception>
 #include <cassert>
 #include "PxPhysicsAPI.h"
 #include "extensions/PxDefaultErrorCallback.h"

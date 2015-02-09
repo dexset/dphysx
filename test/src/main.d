@@ -1,4 +1,4 @@
-import dphysx.base;
+import dphysx;
 import std.stdio;
 import std.string;
 string toDString( const(char*) c_str ) nothrow
@@ -36,6 +36,11 @@ void main()
     assert( cooking_params !is null );
 
     assert( initExtensions( physics ) );
+
+    auto scene_desc = getSceneDesc( tolerances_scale );
+    assert( scene_desc !is null );
+    auto scene = physics_createScene( physics, scene_desc );
+    assert( scene !is null );
 
     closeExtensions();
 
