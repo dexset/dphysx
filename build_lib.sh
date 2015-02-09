@@ -18,4 +18,3 @@ echo Building lib
 ar rcs ./lib/libdphysx.a $NAMES
 echo Done
 rm $NAMES
-

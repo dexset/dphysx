@@ -6,14 +6,14 @@
     "importPaths": [ "../import" ],
     "sourcePaths": [ "src" ],
 
-    "lflags": [ "-L../lib", "-L/home/akzwar/lib64" ],
+    "lflags": [ "-L../lib", "-L$HOME/lib64" ],
 
     "libs":
     [
         "dphysx",
         "stdc++",
-        "PhysX3_x64",
         "PhysX3Common_x64",
+        "PhysX3_x64",
         "PhysX3Cooking_x64",
         "PhysX3Extensions",
         "PhysXProfileSDK",
