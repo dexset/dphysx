@@ -47,6 +47,14 @@ void main()
     auto scene = physics_createScene( physics, scene_desc );
     assert( scene !is null );
 
+    //PxRigidDynamic* aCapsuleActor = thePhysics->createRigidDynamic(PxTransform(position));
+    //PxTransform relativePose(PxQuat(PxHalfPi, PxVec(0,0,1)));
+    //PxShape* aCapsuleShape = aCapsuleActor->createShape(PxCapsuleGeometry(radius, halfHeight),
+    //    aMaterial);
+    //aCapsuleShape->setLocalPose(relativePose);
+    //PxRigidBodyExt::updateMassAndInertia(*aCapsuleActor, capsuleDensity);
+    //aScene->addActor(aCapsuleActor); 
+
     closeExtensions();
 
     releaseScene( scene );

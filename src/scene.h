@@ -9,6 +9,8 @@ extern "C"
 {
     PxSceneDesc* getSceneDesc( PxTolerancesScale* );
     void releaseScene( PxScene* );
+
+    void scene_addActor( PxScene*, PxRigidActor* );
 }
 
 #endif
