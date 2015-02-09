@@ -6,11 +6,8 @@ DPxErrorCallback::DPxErrorCallback( CustomErrorCallback _report_error_callback )
     report_error_callback = _report_error_callback;
 }
 
-DPxErrorCallback::~DPxErrorCallback()
-{ fprintf( stderr, "deleted" ); }
-
-void DPxErrorCallback::reportError( PxErrorCode::Enum code, const char* message, const char* file, int line )
-{ report_error_callback( code, message, file, line ); }
+void DPxErrorCallback::reportError( PxErrorCode::Enum code, const char* file, const char* message, int line )
+{ report_error_callback( code, file, message, line ); }
 
 PxDefaultErrorCallback* getDefaultErrorCallback()
 { return new PxDefaultErrorCallback(); }

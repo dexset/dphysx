@@ -2,3 +2,6 @@
 
 PxSceneDesc* getSceneDesc( PxTolerancesScale* tolerances_scale )
 { return new PxSceneDesc( *tolerances_scale ); }
+
+void releaseScene( PxScene* scene )
+{ scene->release(); }

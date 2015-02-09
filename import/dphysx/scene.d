@@ -9,4 +9,5 @@ alias void* PxScene;
 extern(C)
 {
     PxSceneDesc getSceneDesc( PxTolerancesScale );
+    void releaseScene( PxScene );
 }

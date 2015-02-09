@@ -1,18 +1,23 @@
 import dphysx;
 import std.stdio;
 import std.string;
+
 string toDString( const(char*) c_str ) nothrow
 {
     if( c_str is null ) return "";
     char *ch = cast(char*)c_str;
     string ret;
-    while( *ch++ != '\0' ) ret~=*ch;
+    while( *ch != '\0' )
+    {
+        ret~=*ch;
+        ch++;
+    }
     return ret;
 }
 
-void err_callback( PxErrorCode code, const char* message, const char* file, int line )
+void err_callback( PxErrorCode code, const char* file, const char* message, int line )
 {
-    writeln( "Error:", code, ":", toDString( file ) );
+    writeln( "Error:", toDString( message ) );
 }
 
 void main()
@@ -44,6 +49,7 @@ void main()
 
     closeExtensions();
 
+    releaseScene( scene );
     releasePhysics( physics );
     releaseProfileZoneManager( profile_zone_manager );
     releaseFoundation( foundation );

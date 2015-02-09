@@ -18,8 +18,6 @@ private:
 public:
     DPxErrorCallback( CustomErrorCallback );
     void reportError( PxErrorCode::Enum, const char*, const char*, int );
-
-    ~DPxErrorCallback();
 };
 
 extern "C"

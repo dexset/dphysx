@@ -8,6 +8,7 @@ using namespace physx;
 extern "C"
 {
     PxSceneDesc* getSceneDesc( PxTolerancesScale* );
+    void releaseScene( PxScene* );
 }
 
 #endif
